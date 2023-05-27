@@ -1,0 +1,61 @@
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('/font/Noto_Sans/NotoSans-Regular.ttf');
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; // 1rem = 10px = 16px * 62.5%;
+  box-sizing: border-box;
+
+  @media only screen and (max-width: $bp-small) {
+    font-size: 50%; // 1rem = 8px = 16px * 50%
+  }
+}
+
+body {
+  color: $color-dark;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 400;
+}
+
+// Container
+.container {
+  display: grid;
+  grid-template-rows:
+    [head-start] 90rem [head-end] repeat(2, [row-start] min-content [row-end])
+    [mid-banner-start] 32vw [mid-banner-end] repeat(
+      3,
+      [row-last-start] min-content [row-last-end]
+    );
+  grid-template-columns:
+    [left-edge-start] 1fr [left-edge-end col-1-start] minmax(min-content, 51rem)
+    [col-1-end col-2-start] minmax(min-content, 60rem)
+    [col-2-end right-edge-start]
+    1fr [right-edge-end];
+
+  grid-column-gap: 9rem;
+  grid-row-gap: 15rem;
+
+  @media only screen and (max-width: $bp-largest) {
+    width: 100%;
+    grid-template-rows:
+      [head-start] 90rem [head-end] repeat(2, [row-start] min-content [row-end])
+      [mid-banner-start] 32vw [mid-banner-end] repeat(
+        3,
+        [row-last-start] min-content [row-last-end]
+      );
+    grid-template-columns: repeat(2, [col-start] 50% [col-end]);
+    grid-column-gap: 0rem;
+    grid-row-gap: 6rem;
+  }
+}

@@ -1,0 +1,41 @@
+// font 18
+.font__18 {
+  @include font(1.8rem, 400);
+}
+
+//font 18 and weight 700
+.font__18--700 {
+  @include font(1.8rem, 700);
+}
+
+// font 24
+.font__24 {
+  @include font(2.4rem, 400);
+}
+
+// font 24 and weight 700
+.font__24--700 {
+  @include font(2.4rem, 700);
+}
+
+// font 42
+.font__42 {
+  @include font(4.2rem, 400);
+
+  @media only screen and (max-width: $bp-largest) {
+    @include font(2.8rem, 400);
+  }
+
+  @media only screen and (max-width: $bp-smaller) {
+    @include font(1.6rem, 400);
+  }
+}
+
+// font 64
+.font__64 {
+  @include font(6.4rem, 700);
+
+  @media only screen and (max-width: $bp-smaller) {
+    @include font(4.8rem, 400);
+  }
+}

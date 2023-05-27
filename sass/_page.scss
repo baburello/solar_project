@@ -1,0 +1,12 @@
+// header
+
+.header {
+  &__title {
+    @media only screen and (max-width: $bp-smaller) {
+      text-align: center;
+    }
+  }
+  &__btn {
+    width: 30.8rem;
+  }
+}
